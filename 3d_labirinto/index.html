@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Labirinto 3D</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="start-screen">
+        <div class="start-content">
+            <h1>Labirinto 3D</h1>
+            <p>Escolha a dificuldade:</p>
+            <div class="difficulty-options">
+                <button id="easy-btn" data-difficulty="easy" class="difficulty-button">
+                    Fácil
+                </button>
+                <button id="medium-btn" data-difficulty="medium" class="difficulty-button">
+                    Médio
+                </button>
+                <button id="hard-btn" data-difficulty="hard" class="difficulty-button">
+                    Difícil
+                </button>
+            </div>
+            <button id="controls-btn" class="action-button controls-button">Controles</button>
+        </div>
+    </div>
+    <div id="controls-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Controles do Jogo</h2>
+            <ul>
+                <li><strong>WASD</strong> ou <strong>Setas:</strong> Mover-se</li>
+                <li><strong>Mouse:</strong> Olhar ao redor</li>
+                <li><strong>Espaço:</strong> Correr</li>
+                <li><strong>R:</strong> Reiniciar o jogo</li>
+                <li><strong>Esc:</strong> Liberar o mouse (pausar o jogo temporariamente)</li>
+            </ul>
+        </div>
+    </div>
+    <div id="game-container" style="display: none;">
+        <div id="hud">
+            ⏱️ Tempo: <span id="timer">0.0</span>s
+        </div>
+        <canvas id="minimap"></canvas>
+        <div id="collision-feedback"></div> 
+        <div id="victory">
+            <div class="message-box">
+                🎉 Você escapou! Parabéns! 🎉<br>
+                Tempo: <span id="final-time">0.0</span>s<br>
+                <button id="restart-victory-btn" class="action-button">Tentar Novamente</button>
+            </div>
+        </div>
+        <div id="game-over">
+            <div class="message-box">
+                💀 Game Over! Você foi pego! 💀<br>
+                <button id="restart-gameover-btn" class="action-button">Recomeçar</button>
+                <button id="quit-game-btn" class="action-button">Sair do Jogo</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.125.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.125.0/examples/js/controls/PointerLockControls.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
